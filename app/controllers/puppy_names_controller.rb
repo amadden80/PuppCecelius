@@ -2,7 +2,7 @@ class PuppyNamesController < ApplicationController
 
   def index
     @puppy_names = PuppyName.all.order(:vote_count)
-    @puppy_name = PuppyName.new
+    @puppy_name=PuppyName.new()
   end
 
   def create

@@ -1,8 +1,7 @@
-
 Rails.application.routes.draw do
 
   root 'puppy_names#index'
-
+  get '/dogs' => 'puppy_names#index'
   get '/cat_names' => 'welcome#index'
 
   namespace :api do
