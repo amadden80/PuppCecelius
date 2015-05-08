@@ -1,4 +1,16 @@
+
 Rails.application.routes.draw do
+
+  root 'puppy_names#index'
+
+  get '/cat_names' => 'welcome#index'
+
+  namespace :api do
+    resources :cat_names, only: [:index, :create]
+  end
+
+  resources :puppy_names, only: [:index, :create]
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

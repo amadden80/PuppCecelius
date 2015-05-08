@@ -1,0 +1,15 @@
+<h2>Puppy Names... MVC pattern</h2>
+
+<%= form_for @puppy_name do |f|%>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  <%= f.submit %>
+<% end %>
+
+<ul>
+  <% @puppy_names.each do |puppy_name| %>
+    <li class='vote-<%= puppy_name.vote_count %>'>
+      <%= puppy_name.name %>
+    </li>
+  <% end %>
+</ul>
