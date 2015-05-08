@@ -2,11 +2,11 @@ class PuppyNamesController < ApplicationController
 
   def index
     @puppy_names = PuppyName.all.order(:vote_count)
-    @puppy_name = PuppyName.new
+    @puppy = PuppyName.new
   end
 
   def create
-    puppy_name = PuppyName.create( puppy_name_params )
+    @puppy = PuppyName.create( puppy_name_params )
     redirect_to "/puppy_names" # Decision to go to all puppy names
   end
 
